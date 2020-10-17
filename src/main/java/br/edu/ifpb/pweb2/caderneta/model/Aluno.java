@@ -1,9 +1,11 @@
 package br.edu.ifpb.pweb2.caderneta.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +20,9 @@ public class Aluno extends Usuario implements Serializable {
 	
 	@Column(name = "nm_matricula")
 	private String matricula;
+	
+	@OneToMany(mappedBy = "aluno")
+	private List<AlunoTurma> alunoTurma;
 	
 	// GETTERS AND SETTERS
 

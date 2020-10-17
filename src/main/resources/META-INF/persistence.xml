@@ -8,10 +8,12 @@
 	<persistence-unit name="caderneta" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-		<non-jta-data-source>java:/caderneta-ds</non-jta-data-source>
+		<non-jta-data-source>java:/academico-ds</non-jta-data-source>
 		
 		<class>br.edu.ifpb.pweb2.caderneta.model.Aluno</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.AlunoTurma</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Aula</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.Coordenador</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Disciplina</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Nota</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Professor</class>
@@ -19,10 +21,10 @@
 		<class>br.edu.ifpb.pweb2.caderneta.model.Usuario</class>
 		
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.jdbc.batch_size" value="2000" />
 		</properties>
 	

@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -35,8 +36,11 @@ public class Turma implements Serializable {
 	@JoinColumn(name = "id_professor")
 	private Professor professor;
 	
-	@Column(name = "nm_")
-	private List<Aluno> alunos;
+	@OneToMany(mappedBy = "turma")
+	private List<AlunoTurma> alunoTurma;
+	
+//	@Column(name = "nm_alunos")
+//	private List<Aluno> alunos;
 	
 	// GETTERS AND SETTERS
 	

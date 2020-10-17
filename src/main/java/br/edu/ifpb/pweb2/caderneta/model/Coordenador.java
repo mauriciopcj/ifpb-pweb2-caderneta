@@ -2,8 +2,12 @@ package br.edu.ifpb.pweb2.caderneta.model;
 
 import java.io.Serializable;
 
+import javax.inject.Named;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
+@Named(value = "tb_coordenador")
 public class Coordenador extends Professor implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
